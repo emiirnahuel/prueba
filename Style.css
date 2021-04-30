@@ -4,12 +4,6 @@
 	padding: 0;
 }
 
-.icon {
-	border-radius: 50%;
-}
-
-
-
 body{
 	background: #000000;
 	color: #ffff;
@@ -36,13 +30,12 @@ ul{
 	justify-content: space-between;
 	align-items: center;
 	height: 60px;
-	padding: 20px 0;
+	padding: 10px 0;
 
 }
 
 .nav-brand {
-	width: 50px;
-	border-radius: 50%;
+	width: 100px
 }
 
 .nav-main ul {
