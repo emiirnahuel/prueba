@@ -14,40 +14,68 @@
 	<!-- FONT CUSTOM CSS -->
 	<link rel="preconnect" href="https://fonts.gstatic.com">
 	<!-- FONT OSWALD -->
-	<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+	<link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@200&display=swap" rel="stylesheet">
 </head>
 <body>
-	<div class="menu-btn">
-		<i class="fas fa-bars fa-2x"></i>
-	</div>
+		<div class="menu-btn">
+			<i class="fas fa-bars fa-2x"></i>
+		</div>
 	<div class="container">
 		<nav class="nav-main">
-			<img src="marvel_logo_icon_181411.png" alt="Logo, marvel, black" class="nav-brand">
+			<img src="Multimedia/marvel_logo_icon_181411.png" alt="Logo, marvel, black" class="nav-brand">
 			<ul class="nav-menu">
 				<li>
-					<a href="">Inicio</a>
+					<a href="#">Inicio</a>
 				</li>
 				<li>
-					<a href="">Mi Vengador</a>
+					<a href="#">Mi Vengador</a>
 				</li>
 				<li>
-					<a href="">Noticias Multiversales</a>
+					<a href="#">Noticias Multiversales</a>
 				</li>
 				<li>
-					<a href="">Nuestro Universo</a>
+					<a href="#">Nuestro Universo</a>
 				</li>
 				<li>
-					<a href="">Peliculas y Series</a>
+					<a href="#">Peliculas y Series</a>
 				</li>
 			</ul>
 			<ul class="nav-menu-right">
 				<li>
-					<a href="a"></a>
+					<a href="#modal" class="btn-abrir-popup" id="btn-abrir-popup">
+						<i class="fas fa-envelope"></i>
+					</a>
+				<li>
+					<a href="#">
 						<i class="fas fa-search"></i>
+					</a>
 				</li>
 			</ul>
 		</nav>
+	</div>
+		<!-- Form email -->
+		<div class="overlay" id="overlay">
+			<div class="popup" id="popup">
+				<div class="nav-popup">
+					<a href="#" id="btn-cerrar-popup" class="btn-cerrar-popup"><i 
+						class="fas fa-times"></i></a>
+						<h3>Contactanos</h3>
+						<h4>y reciba la informacion en su correo.</h4>
+				</div>
+				<form action="">
+					<div class="contenedor-inputs">
+						<input type="email" placeholder="Escriba su email">
+						<input type="text" placeholder="Escriba el asunto">
+						<textarea placeholder="Esciba su mensaje"></textarea>
+					</div>
+					<input type="submit" class="btn-submit">
+				</form>
+			</div>
+		</div>
+	</div>
 		<hr>
+		
 		<!-- SHOWCASE -->
 		<header class="showcase">
 			<h2>Grandes Noticias del dia</h2>
@@ -248,6 +276,5 @@
 	<script src="https://unpkg.com/scrollreveal"></script>
 	<!-- custom js -->
 	<script src="main.js"></script>
-
 </body>
 </html>

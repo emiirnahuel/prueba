@@ -2,6 +2,7 @@
 	box-sizing: border-box;
 	margin: 0;
 	padding: 0;
+	text-decoration: none;
 }
 
 body{
@@ -10,17 +11,14 @@ body{
 	background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='28' height='49' viewBox='0 0 28 49'%3E%3Cg fill-rule='evenodd'%3E%3Cg id='hexagons' fill='%236d4a06' fill-opacity='0.2' fill-rule='nonzero'%3E%3Cpath d='M13.99 9.25l13 7.5v15l-13 7.5L1 31.75v-15l12.99-7.5zM3 17.9v12.7l10.99 6.34 11-6.35V17.9l-11-6.34L3 17.9zM0 15l12.98-7.5V0h-2v6.35L0 12.69v2.3zm0 18.5L12.98 41v8h-2v-6.85L0 35.81v-2.3zM15 0v7.5L27.99 15H28v-2.31h-.01L17 6.35V0h-2zm0 49v-8l12.99-7.5H28v2.31h-.01L17 42.15V49h-2z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
 	font-size: 16px;
 	font-family: 'Oswald', sans-serif;
+	width: 90%;
+	margin: auto;
 }
 a {
 	color: #ffff;
 }
 ul{
 	list-style: none;
-}
-
-.container {
-	width: 90%;
-	margin: auto;
 }
 
 /* NAVEGATION */
@@ -67,6 +65,156 @@ ul{
 	right: 30px;
 	z-index: 2;
 	display: none;
+}
+
+/* FORM MAIL */
+
+.contenedor article .btn-abrir-popup {
+	font-family: 'Montserrat', sans-serif;
+	font-size: 106px;
+	cursor: pointer;
+	transition: .3s ease all;
+}
+
+.contenedor article .btn-abrir-popup:hover {
+	color: #fff;
+}
+
+/* ------------------------- */
+/* POPUP */
+/* ------------------------- */
+
+.overlay {
+	background: rgba(0,0,0,.7);
+	position: fixed;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	align-items: center;
+	justify-content: center;
+	display: flex;
+	visibility: hidden;
+}
+
+.overlay.active {
+	visibility: visible;
+}
+
+.popup {
+	background: url('./Multimedia/basevengadores.jpg') no-repeat center center/cover;
+	box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.3);
+	border-radius: 3px;
+	font-family: 'Montserrat', sans-serif;
+	padding: 20px;
+	text-align: center;
+	width: 70%;
+	
+	transition: .3s ease all;
+	transform: scale(0.7);
+	opacity: 0;
+}
+
+.popup .nav-popup {
+	width: 100%;
+	height: 35%;
+	padding: -20px;
+	position: relative;
+	background:  #094;
+
+}
+.popup .btn-cerrar-popup {
+	font-size: 16px;
+	line-height: 16px;
+	display: block;
+	text-align: right;
+	transition: .3s ease all;
+	color: #BBBBBB;
+}
+
+.popup .btn-cerrar-popup:hover {
+	color: #000;
+}
+
+.popup h3 {
+	font-size: 36px;
+	font-weight: 600;
+	margin-bottom: 10px;
+	opacity: 0;
+}
+
+.popup h4 {
+	font-size: 26px;
+	font-weight: 300;
+	margin-bottom: 40px;
+	opacity: 0;
+}
+
+.popup form .contenedor-inputs {
+	opacity: 0;
+}
+
+.popup form .contenedor-inputs input {
+	width: 90%;
+	padding: 7px;
+	margin: 6px 0;
+	border: none;
+	border-bottom: 3px solid #094;
+	background: linear-gradient(to bottom, transparent, rgba(2,2,2, .5));
+	color: #fff;
+	font-size: 16px;
+	font-family: 'Nunito Sans', sans-serif;
+}
+
+.popup form .contenedor-inputs textarea {
+	min-height: 150px;
+	resize: none;
+	width: 90%;
+	padding: 7px;
+	margin: 6px 0;
+	border: none;
+	border-bottom: 3px solid #094;
+	background: linear-gradient(to bottom, transparent, rgba(2,2,2, .5));
+	color: #fff;
+	font-size: 16px;
+	font-family: 'Nunito Sans', sans-serif;
+}
+.popup form .contenedor-inputs input:focus {
+	background:  rgba(2, 2, 2, .5);
+	outline: none;
+	border-bottom: 3px solid #5d9;
+}
+
+.popup form .contenedor-inputs textarea:focus {
+	background:  rgba(2, 2, 2, .5);
+	outline: none;
+	border-bottom: 3px solid #5d9;
+}
+
+.popup form .contenedor-inputs input::placeholder,
+.popup form .contenedor-inputs textarea::placeholder {
+	color: #fff;
+}
+
+.popup form .btn-submit {
+	background-color: #094;
+	border-bottom: none;
+	padding: 12px;
+}
+
+.popup form .btn-submit:hover {
+	background-color: #072;
+	border-bottom: none;
+	padding: 12px;
+	cursor: pointer;
+}
+
+.popup form .btn-submit:focus {
+	background: #094;
+}
+
+.popup form .btn-submit:active {
+	background: linear-gradient(to bottom #072, #050);
 }
 
 /* SHOWCASE */
@@ -273,6 +421,46 @@ hr {
 	.footer-links .footer-container {
 		grid-template-columns: repeat(2, 1fr);
 	}
+
+}
+
+
+/* ------------------------- */
+/* ANIMACIONES */
+/* ------------------------- */
+.popup.active {	transform: scale(1); opacity: 1; }
+.popup.active h3 { animation: entradaTitulo .8s ease .5s forwards; }
+.popup.active h4 { animation: entradaSubtitulo .8s ease .5s forwards; }
+.popup.active .contenedor-inputs { animation: entradaInputs 1s linear 1s 
+forwards; }
+
+@keyframes entradaTitulo {
+	from {
+		opacity: 0;
+		transform: translateY(-25px);
+	}
+
+	to {
+		transform: translateY(0);
+		opacity: 1;
+	}
+}
+
+@keyframes entradaSubtitulo {
+	from {
+		opacity: 0;
+		transform: translateY(25px);
+	}
+
+	to {
+		transform: translateY(0);
+		opacity: 1;
+	}
+}
+
+@keyframes entradaInputs {
+	from { opacity: 0; }
+	to { opacity: 1; }
 }
 
 @media (max-width: 500px) {
@@ -289,5 +477,6 @@ hr {
 		width: 100%;
 		padding: 50px 20px;
 	}
+
 }
 
